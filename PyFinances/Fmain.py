@@ -1,5 +1,9 @@
+#import modules
 import os
 import csv
+import statistics
+
+#creating trackers
 
 with open('budget_data.csv') as csv_file:
     csv_reader = csv.reader(csv_file)
@@ -7,17 +11,13 @@ with open('budget_data.csv') as csv_file:
 
     row_count = 0
     pnl_total = 0
-    
-
+       
     for row in csv_reader:
         row_count = row_count + 1
         pnl_total += int(row[0])
-    
 
-
-
-
-
+        
+      
 print("----------------------")
 print("Total Months")
 print(row_count)
@@ -25,4 +25,5 @@ print("----------------------")
 print("Total P&L")
 print(pnl_total)
 print("-----------------------")
+print("Average Change : ")
 
